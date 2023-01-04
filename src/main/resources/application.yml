@@ -1,0 +1,9 @@
+server:
+  port: 8082
+  servlet:
+    contextPath: /innocent
+spring:
+  datasource:
+    password: smoothies
+    url: jdbc:mysql://localhost:3306/innocent?user=root
+    driverClassName: com.mysql.cj.jdbc.Driver
