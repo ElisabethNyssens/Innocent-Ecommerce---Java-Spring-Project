@@ -23,6 +23,13 @@ public class ArticleTranslationEntity {
 
     public ArticleTranslationEntity() {}
 
+    public ArticleTranslationEntity(Integer id, String name, String articleId, String languageCode) {
+        setId(id);
+        setName(name);
+        setArticleId(articleId);
+        setLanguageCode(languageCode);
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

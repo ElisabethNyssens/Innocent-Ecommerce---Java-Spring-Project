@@ -7,7 +7,7 @@
 </h2>
 <section class="section-produits">
     <div class="container">
-        <div class="text-center row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 g-lg-5">
+        <div class="text-center row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 g-lg-5">
             <c:forEach items="${articles}" var="article">
             <div class="col">
                 <a href="<spring:url value='/detail/${article.getValue().getId()}' />" class="item-link">

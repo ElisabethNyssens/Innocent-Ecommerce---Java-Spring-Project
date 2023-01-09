@@ -11,7 +11,6 @@ public class Article {
         setId(id);
         setUnitPrice(unitPrice);
         setCapacity(capacity);
-        setCapacity(capacity);
         setIngredients(ingredients);
         setCategory(category);
     }
@@ -56,5 +55,15 @@ public class Article {
 
     public Category getCategory() {
         return category;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof Article
+                && id.equals(((Article) o).getId())
+                && unitPrice.equals(((Article) o).getUnitPrice())
+                && capacity.equals(((Article) o).getCapacity())
+                && ingredients.equals(((Article) o).getIngredients())
+                && category.equals(((Article) o).getCategory());
     }
 }

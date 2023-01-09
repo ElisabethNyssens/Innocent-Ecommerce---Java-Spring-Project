@@ -1,0 +1,190 @@
+@media (max-width: 992px) {
+    .cart-item {
+        height: 120px;
+    }
+}
+
+@media (min-width: 769px) {
+    .section-account .card {
+        width: 50%;
+    }
+    .section-account .nav button {
+        width: 100%;
+    }
+    .shopping-cart {
+        width: 75%;
+    }
+    .section-order .card {
+        width: 70%;
+    }
+    .section-detail {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        min-height: 81vh;
+    }
+    .intro {
+        padding-top: 0px;
+    }
+    .nav-left {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(247, 247, 247);
+    }
+    .nav-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+    .shopping-cart {
+        width: 100%;
+    }
+
+    .section-account .card {
+        width: 100%;
+    }
+    .section-order .card {
+        width: 100%;
+    }
+    .section-account .nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .smoothie1 {
+        width: 110px;
+        height: 200px;
+        top: 12%;
+        left: 10%;
+        -webkit-transform: rotate(145deg);
+        transform: rotate(145deg);
+    }
+
+    .smoothie2 {
+        width: 160px;
+        height: 270px;
+        bottom: 8%;
+        left: initial;
+        right: -2%;
+        -webkit-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+    }
+
+    .smoothie3 {
+        width: 20%;
+        height: 180px;
+        top: 15%;
+        right: 9%;
+        -webkit-transform: rotate(-130deg);
+        transform: rotate(-130deg);
+    }
+
+    .smoothie4 {
+        width: 35%;
+        height: 280px;
+        bottom: 5%;
+        left: -4%;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .smoothie5 {
+        width: 20%;
+        height: 200px;
+        bottom: 2%;
+        right: 33%;
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+
+    .framb1 {
+        width: 60px;
+        height: 60px;
+        top: 35%;
+        left: 5%;
+    }
+
+    .framb2 {
+        display: none;
+    }
+
+    .framb3 {
+        width: 70px;
+        height: 70px;
+        bottom: 6%;
+        left: 30%;
+    }
+
+    .framb4 {
+        width: 45px;
+        height: 45px;
+        top: 40%;
+        right: 9%;
+    }
+
+    .detail-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-right .nav_link {
+        padding-left: 12px;
+    }
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .item-card img {
+        margin-top: -20%;
+    }
+
+    .smoothie1 {
+        width: 81px;
+        height: 160px;
+        -webkit-transform: rotate(158deg);
+        transform: rotate(158deg);
+    }
+
+    .smoothie2 {
+        width: 100px;
+        height: 180px;
+        bottom: 10%;
+        right: -5%;
+        -webkit-transform: rotate(-27deg);
+        transform: rotate(-27deg);
+    }
+
+    .smoothie3 {
+        width: 17%;
+        height: 150px;
+        -webkit-transform: rotate(-151deg);
+        transform: rotate(-151deg);
+    }
+
+    .smoothie4 {
+        width: 30%;
+        height: 200px;
+        bottom: 8%;
+        left: -4%;
+        -webkit-transform: rotate(37deg);
+        transform: rotate(37deg);
+    }
+
+    .smoothie5 {
+        height: 170px;
+    }
+
+    .detail-img {
+        height: 28vh;
+    }
+}

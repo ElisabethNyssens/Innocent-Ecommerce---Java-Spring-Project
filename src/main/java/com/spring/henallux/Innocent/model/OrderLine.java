@@ -14,9 +14,8 @@ public class OrderLine {
         setNbArticles(1);
     }
 
-    public String getTotalPrice() {
-        double totalPrice = nbArticles * article.getUnitPrice();
-        return String.format("%.2f", totalPrice);
+    public double getTotalPrice() {
+        return nbArticles * article.getUnitPrice();
     }
 
     public void setNbArticles(Integer nbArticles) {

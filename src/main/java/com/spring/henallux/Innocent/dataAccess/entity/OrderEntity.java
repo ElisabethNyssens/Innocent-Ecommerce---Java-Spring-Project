@@ -23,6 +23,13 @@ public class OrderEntity {
 
     public OrderEntity() {}
 
+    public OrderEntity(Integer id, GregorianCalendar date, Boolean isPaid, UserEntity userEntity) {
+        setId(id);
+        setDate(date);
+        setPaid(isPaid);
+        setUserEntity(userEntity);
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

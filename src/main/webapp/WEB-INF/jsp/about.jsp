@@ -7,7 +7,7 @@
   <title>Title</title>
 </head>
 <body>
-  <h2 class="d-block text-center text-primary fw-bold pt-2 pb-5">
+  <h2 class="d-block text-center text-primary fw-bold pt-2 pb-4">
     <spring:message code="aboutUs"/>
   </h2>
   <section
@@ -61,7 +61,7 @@
           qu’on reverse chaque année 10% de nos bénéfices à des ONG et qu’on
           ne met que des petites bonnes choses dans nos boissons.
         </p>
-        <p>Ah, et on fait quelques blagues aussi.</p>
+        <p class="mb-0">Ah, et on fait quelques blagues aussi.</p>
       </div>
     </div>
   </section>

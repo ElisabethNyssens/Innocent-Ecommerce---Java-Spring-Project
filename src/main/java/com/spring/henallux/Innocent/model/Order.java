@@ -7,6 +7,7 @@ public class Order {
     private GregorianCalendar date;
     private Boolean isPaid;
     private User user;
+    private Double totalAmount;
 
     public Order (GregorianCalendar date, Boolean isPaid, User user) {
         setDate(date);
@@ -32,6 +33,10 @@ public class Order {
         return user;
     }
 
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -46,5 +51,9 @@ public class Order {
 
     public void setPaid(Boolean paid) {
         isPaid = paid;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

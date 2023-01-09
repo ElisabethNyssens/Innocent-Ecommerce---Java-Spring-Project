@@ -24,6 +24,14 @@ public class ArticleEntity {
 
     public ArticleEntity() {}
 
+    public ArticleEntity(String id, Double unitPrice, String capacity, String ingredients, CategoryEntity categoryEntity) {
+        setId(id);
+        setUnitPrice(unitPrice);
+        setCapacity(capacity);
+        setIngredients(ingredients);
+        setCategory(categoryEntity);
+    }
+
     public void setId(String id) {
         this.id = id;
     }

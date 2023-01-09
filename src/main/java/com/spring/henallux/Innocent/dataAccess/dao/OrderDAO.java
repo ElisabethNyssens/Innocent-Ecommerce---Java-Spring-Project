@@ -32,9 +32,6 @@ public class OrderDAO implements OrderDataAccess {
     @Transactional
     public Order saveOrder(Order order, List<OrderLine> orderLines) {
         OrderEntity orderEntity = providerConverter.orderModelToOrderEntity(order);
-        System.out.println("COMMANDE :");
-        System.out.println(orderEntity.getDate().toZonedDateTime().toLocalDate().toString());
-
         List<OrderLineEntity> orderLineEntities = orderLines.stream()
                 .map(orderLine -> providerConverter.orderLineModelToOrderLineEntity(orderLine,orderEntity))
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -42,5 +39,24 @@ public class OrderDAO implements OrderDataAccess {
         orderLineRepository.saveAll(orderLineEntities);
 
         return providerConverter.orderEntityToOrderModel(orderEntity);
+    }
+
+    public Order updatePaymentOrder(Integer orderId) {
+        OrderEntity orderEntity = orderRepository.findById(orderId).orElse(null);
+        orderEntity.setPaid(true);
+        orderRepository.save(orderEntity);
+
+        return providerConverter.orderEntityToOrderModel(orderEntity);
+    }
+
+    public double getTotalAmountOrder(Integer orderId) {
+        return orderLineRepository.getTotalAmountOrder(orderId);
+    }
+
+    public ArrayList<Order> getAllOrdersFromUser(String username) {
+        List<OrderEntity> orderEntities = orderRepository.findOrderEntitiesByUserEntityUsernameAndAndIsPaidTrue(username);
+        ArrayList<Order> orders = orderEntities.stream().map(orderEntity -> providerConverter.orderEntityToOrderModel(orderEntity))
+                .collect(Collectors.toCollection(ArrayList::new));
+        return orders;
     }
 }

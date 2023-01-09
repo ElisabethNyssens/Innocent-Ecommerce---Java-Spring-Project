@@ -6,10 +6,9 @@ public class Category {
     private String bgColor;
     private String color;
 
-    public Category(String id,String name, String bgColor, String color) {
+    public Category(String id,String name) {
+        setId(id);
         setName(name);
-        setBgColor(bgColor);
-        setColor(color);
     }
 
     public Category() {}
@@ -45,5 +44,13 @@ public class Category {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        System.out.println("WESH2");
+        return o instanceof Category
+                && ((Category) o).getId().equals(getId())
+                && ((Category) o).getName().equals(getName()) ;
     }
 }

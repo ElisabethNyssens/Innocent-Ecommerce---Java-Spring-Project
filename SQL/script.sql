@@ -28,10 +28,10 @@ create table orders
 (
     id         int auto_increment primary key,
     date       date        not null,
-    is_paid     bit         not null,
+    is_paid    bit         not null,
     user       varchar(15) not null,
     constraint orders_users_username_fk
-        foreign key (user_username) references users (username)
+        foreign key (user) references users (username)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 create table categories

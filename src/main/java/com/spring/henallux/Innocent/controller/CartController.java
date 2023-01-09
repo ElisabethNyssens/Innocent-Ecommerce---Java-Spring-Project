@@ -48,9 +48,8 @@ public class CartController {
         if (!model.containsAttribute(Constants.CART)) {
             model.addAttribute(Constants.CART,new HashMap<String, OrderLine>());
         }
-        double subtotal = cart.values().stream().map(item -> item.getNbArticles() * item.getArticle().getUnitPrice()).reduce(0., Double::sum);
+        double subtotal = cart.values().stream().map(item -> item.getTotalPrice()).reduce(0., Double::sum);
         model.addAttribute("subtotal", String.format("%.2f", subtotal));
-        model.addAttribute("totalCost", String.format("%.2f", subtotal + 3));
 
         return "integrated:cart";
     }

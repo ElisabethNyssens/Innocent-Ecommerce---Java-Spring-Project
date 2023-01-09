@@ -6,6 +6,7 @@
 <html>
 <head>
     <link type="text/css" href="<spring:url value='/css/style.css' />" rel="Stylesheet">
+    <link type="text/css" href="<spring:url value='/css/responsive.css' />" rel="Stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="<spring:url value='/images/favicon.png' />">
     <spring:url var="localeFr" value="">
@@ -22,10 +23,18 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md w-100 d-flex justify-content-between px-5 py-3">
-            <ul class="nav-left">
+        <sec:authorize access="isAuthenticated()">
+            <p class="d-block d-md-none px-3 my-0 py-2" style="background-color: rgba(var(--bs-pink-rgb), 0.1)">
+                <span class="pe-1">Bonjour,</span><span class="text-primary">Elisabeth</span>
+            </p>
+        </sec:authorize>
+        <nav class="navbar navbar-expand-md w-100 d-flex justify-content-between px-0 px-md-3 px-lg-5 pt-3 pb-3 pb-md-4">
+            <button class="navbar-toggler mx-3" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul id="navbarText" class="nav-left mt-3 mb-0 p-3 my-md-0 p-md-0 collapse navbar-collapse">
                 <li>
-                    <div class="dropdown">
+                    <div class="dropdown d-none d-md-block">
                         <a class="nav_link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <spring:message code="ourDrinks"/>
                         </a>
@@ -39,22 +48,38 @@
                             </c:forEach>
                         </ul>
                     </div>
+                    <div class="d-block d-md-none">
+                        <p class="mt-0 mb-2">
+                            <spring:message code="ourDrinks"/>
+                        </p>
+                        <ul class="ps-2">
+                            <c:forEach items="${categories}" var="category">
+                                <li>
+                                    <a class="nav_link" href="<spring:url value='/products/${category.getId()}' />">
+                                            ${category.getName()}
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
                 </li>
-                <li><a class="nav_link" href="<spring:url value='/about' />"><spring:message code="about"/></a></li>
+                <li class="w-100 mt-2 pt-2 mt-md-0 pt-md-0"><a class="nav_link" href="<spring:url value='/about' />"><spring:message code="about"/></a></li>
             </ul>
-            <a href="<spring:url value='/' />" class="logo-link position-absolute top-0 start-50 translate-middle-x ">
+            <a href="<spring:url value='/' />" class="navbar-brand logo-link position-absolute top-0 start-50 translate-middle-x p-0">
                 <h1 class="logo mt-3">
                     Innocent
                 </h1>
             </a>
-            <ul class="nav-right">
-                <li class="d-flex align-items-center">
-                    <ul class="lang">
+            <ul class="nav-right m-3 m-md-0">
+                <li class="dropdown">
+                    <a class="nav_link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe2"></i>
+                    </a>
+                    <ul class="dropdown-menu lang">
                         <li>
-                            <a href="${localeFr}" class="nav_link pe-1">Fr</a>
+                            <a href="${localeFr}" class="dropdown-item nav_link ps-2">Fr</a>
                         </li>
-                        -
-                        <li><a href="${localeEn}" class="nav_link ps-1">En</a></li>
+                        <li><a href="${localeEn}" class="dropdown-item nav_link ps-2">En</a></li>
                     </ul>
                 </li>
                 <sec:authorize access="!isAuthenticated()">
@@ -84,11 +109,12 @@
                         <a class="nav_link" href="<spring:url value='/account' />">
                             <i class="bi bi-person"></i>
                         </a>
-                        <span class="ps-2 pe-1"><spring:message code="hello"/>,</span><span class="text-primary">${pageContext.request.userPrincipal.principal.firstname}</span>
+                        <span class="ps-2 pe-1 d-none d-md-inline-block"><spring:message code="hello"/>,</span><span class="text-primary d-none d-md-inline-block">${pageContext.request.userPrincipal.principal.firstname}</span>
                     </li>
                 </sec:authorize>
             </ul>
         </nav>
+
     </header>
     <main>
         <tiles:insertAttribute name="main-content" />
@@ -111,10 +137,7 @@
         >
     </footer>
 
-    <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>

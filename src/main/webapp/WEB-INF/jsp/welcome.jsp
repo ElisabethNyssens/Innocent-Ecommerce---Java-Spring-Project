@@ -3,8 +3,8 @@
 <%@ include file="include/importTags.jsp"%>
 
 <section class="section-intro">
-    <div class="intro d-flex justify-content-center align-items-start w-100 vh-100">
-        <div class="d-flex flex-column justify-content-start">
+    <div class="intro d-flex justify-content-center align-items-center  align-items-md-start w-100 vh-100">
+        <div class="d-flex flex-column  justify-content-start">
             <img class="hello px-5" src="./images/innocent-hello.svg" alt="Hello"/>
             <h2 class="hello_txt fw-bold display-4 text-center">
                 <span><spring:message code="welcome"/> </span><span>innocent.</span>

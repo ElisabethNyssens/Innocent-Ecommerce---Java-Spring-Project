@@ -24,6 +24,11 @@ public class CategoryEntity {
 
     public CategoryEntity() {}
 
+    public CategoryEntity(String id, String name) {
+        setId(id);
+        setName(name);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
