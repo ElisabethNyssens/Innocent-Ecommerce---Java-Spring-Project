@@ -19,7 +19,9 @@ public class OrderLine {
     }
 
     public void setNbArticles(Integer nbArticles) {
-        this.nbArticles = nbArticles;
+        if (nbArticles > 0) {
+            this.nbArticles = nbArticles;
+        }
     }
 
     public void setArticle(Article article) {

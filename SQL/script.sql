@@ -45,7 +45,7 @@ create table categories
 create table articles
 (
     id          varchar(30)   not null primary key,
-    unit_price  decimal(4, 2) not null,
+    unit_price  decimal(4, 2) not null check(unit_price > 0),
     capacity    varchar(10)   not null,
     ingredients varchar(500)  not null,
     category_id varchar(20)   not null,
@@ -57,8 +57,8 @@ create table articles
 create table order_lines
 (
     id          int auto_increment primary key,
-    unit_price  decimal(4, 2) not null,
-    nb_articles int           not null,
+    unit_price  decimal(4, 2) not null check(unit_price > 0),
+    nb_articles int           not null check(nb_articles > 0),
     order_id    int           not null,
     article_id  varchar(30)   not null,
     constraint order_lines_articles_id_fk
