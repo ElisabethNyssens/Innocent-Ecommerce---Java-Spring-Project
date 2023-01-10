@@ -22,6 +22,8 @@
         <div class="hero_smoothie framb1"></div>
         <div class="hero_smoothie framb2"></div>
         <div class="hero_smoothie framb3"></div>
+        <div class="hero_smoothie passion1"></div>
+        <div class="hero_smoothie passion2"></div>
     </div>
 </section>
 
