@@ -33,9 +33,7 @@ public class User implements UserDetails {
     @Email
     private String email;
 
-  /*  @Size(min = 9, max = 13)*/
     @Pattern(regexp="(^$|((\\+|00)32)?[0-9]{9,13})")
-/*    @Pattern(regexp = "((\\+|00)32)?[0-9]+")*/
     private String phoneNumber;
 
     @NotEmpty
@@ -95,7 +93,11 @@ public class User implements UserDetails {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.length() == 0) {
+            this.phoneNumber = null;
+        } else {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public void setAddress(String address) {

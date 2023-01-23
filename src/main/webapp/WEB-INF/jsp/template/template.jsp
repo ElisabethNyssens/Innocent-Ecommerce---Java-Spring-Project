@@ -82,12 +82,17 @@
                         <li><a href="${localeEn}" class="dropdown-item nav_link ps-2">En</a></li>
                     </ul>
                 </li>
-                <sec:authorize access="!isAuthenticated()">
                 <li class="d-flex align-items-center">
-                    <a class="nav_link" href="<spring:url value='/login' />">
+                    <a class="nav_link position-relative" href="<spring:url value='/cart' />">
                         <i class="bi bi-cart3"></i>
+                        <c:if test="${nbCartItems.getValue() > 0}">
+                            <span class="cart-badge text-white position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    ${nbCartItems.getValue()}
+                            </span>
+                        </c:if>
                     </a>
                 </li>
+                <sec:authorize access="!isAuthenticated()">
                 <li class="d-flex align-items-center">
                     <a class="nav_link" href="<spring:url value='/login' />">
                         <i class="bi bi-person"></i>
@@ -95,16 +100,6 @@
                 </li>
                 </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
-                    <li class="d-flex align-items-center">
-                        <a class="nav_link position-relative" href="<spring:url value='/cart' />">
-                            <i class="bi bi-cart3"></i>
-                            <c:if test="${nbCartItems.getValue() > 0}">
-                            <span class="cart-badge text-white position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                ${nbCartItems.getValue()}
-                            </span>
-                            </c:if>
-                        </a>
-                    </li>
                     <li class="d-flex align-items-center">
                         <a class="nav_link" href="<spring:url value='/account' />">
                             <i class="bi bi-person"></i>

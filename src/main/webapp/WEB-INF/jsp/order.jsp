@@ -62,7 +62,7 @@
               </td>
               <td>${cartItem.getArticle().getUnitPrice()}€</td>
               <td>${cartItem.getNbArticles()}</td>
-              <td class="pe-0">${cartItem.getTotalPrice()}€</td>
+              <td class="pe-0">${String.format("%.2f", cartItem.getTotalPrice())}€</td>
             </tr>
             </c:forEach>
           </tbody>
